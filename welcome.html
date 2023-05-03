@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <link rel="stylesheet" href="pagestyle.css" />
+  <script>
+  function count(str)
+{
+	var req = new XMLHttpRequest();
+	req.open("GET" , "http://localhost/wordcounter/count.php?str="+str , true);
+	req.send();
+	req.onreadystatechange = function(){
+		if(req.readyState==4 && req.status==200)
+		{
+	
+		
+			document.getElementById("r1").innerHTML= req.responseText;
+			
+		}
+	}
+	
+}</script>
+ </head>
+ 
+ <body>
+ <div id="mainform">
+  <form action="count.php" method="get" >
+   <textarea name="str" oninput="count(this.value)" >
+   </textarea>
+   <input type="submit" value="count" />
+   </br>
+   <p id="r1" type="text" placeholder="result" value="n" name="words"> </p>
+  </form>
+ <div>  
+ </body>
+</html>
