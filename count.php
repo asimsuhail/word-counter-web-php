@@ -1,10 +1,7 @@
 <?php
 
-$q = $_GET['str'];
-$s = str_word_count($q);
- echo $s;
-
-
-
+$input_str   = $_GET['str'];
+$total_words = str_word_count($input_str);
+echo $s;
 
 ?>
